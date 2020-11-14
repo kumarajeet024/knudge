@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">  
+    
+    <title>Knudge | OKR</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left" id="left">
+            <div class="left-sidebar">
+                <button id="cross" onclick="close()"><span class="iconify" data-inline="false" data-icon="maki:cross-11" style="font-size: 15px; color: white;"></span></button>
+                <div class="user-info">
+                    <div class="user-image">
+                        <img src="./assets/image1.png" alt="">
+                    </div>
+                    <div class="user-name">
+                        <h3 class="name">John Doe</h3>
+                        <p>Manager</p>
+                    </div>
+                </div>
+                <hr></hr>
+                <div class="timeline-select">
+                    <label for="timeline">Timeline</label><br>
+                    <select name="timeline" id="timeline-select">
+                        <option value="h2">H2 2020-2021</option>
+                        <option value="h1">H1 2020-2021</option>
+                        <option value="g2">G2 2019-2020</option>
+                    </select>
+                </div>
+                <div class="members">
+                    <label for="Members">Members</label>
+                    <div class="member">
+                        <img src="./assets/img1.png" alt="">
+                        <p>Stuart Clark</p>
+                    </div>
+                    <div class="member">
+                        <img src="./assets/img2.png" alt="">
+                        <p>Daniel John</p>
+                    </div>
+                    <div class="member">
+                        <img src="./assets/img3.png" alt="">
+                        <p>Nupur Sami</p>
+                    </div>
+                </div>
+                <div class="add-members">
+                   
+                    <button> <span class="iconify" data-inline="false" data-icon="bi:person-plus-fill" style="font-size: 24px; color: white;"></span>Add members</button>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="content" id="content">
+            <div class="top-bar">
+                <button style="z-index: 1;" class="menu" id="menu" onclick="sidebar()"><span class="iconify"  data-inline="false" data-icon="radix-icons:hamburger-menu" style="font-size: 24px; color:#051e3c;"></span></button>
+                <span class="iconify" data-inline="false" data-icon="clarity:notification-solid-badged" style="font-size: 24px; color: #051e3c;"></span>
+                <div class="button">
+                <button class="approve">Send for Approval</button>
+                <button class="addObjective" id="mybtn">Add objective</button>
+                </div>
+            </div>
+
+
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h3>Add Objective</h3>
+                  <hr style="width:100%; background-color: #bdbdbd;">
+                  <div class="firstline">
+                    <div class="timeline-select">
+                        <label for="timeline">Timeline</label><br>
+                        <select name="timeline" id="timeline-select">
+                            <option value="h2">H2 2020-2021</option>
+                            <option value="h1">H1 2020-2021</option>
+                            <option value="g2">G2 2019-2020</option>
+                        </select>
+                    </div>
+                    <div class="addmem">
+                        <label for="add-members">Add Members</label>
+                        <img src="./assets/Group 7.png" alt="">
+                    </div>
+                    <div class="addDate">
+                        
+                        <label for="add-members">Add Date</label>
+                        <img src="./assets/Group 8.png" alt="">
+                    </div>
+                    
+                  </div>
+                  <div class="objectiveDescription">
+                      <label for="description">Objective Description</label>
+                        <textarea name="description" id="description" cols=80" rows="10">Write your objective description</textarea>
+                    </div>
+                    <button class="addObjective">Save</button>
+                </div>
+              
+              </div>
+
+
+            <div class="timeline-info">
+                <button onclick="reveal()"><div class="timeline-head" id="timeline-head">
+                    <p id="timeline-text">See timeline info</p>
+                    <span class="iconify" id="timeline-icon" data-inline="false" data-icon="bi:caret-down-fill" style="font-size: 24px; color: #bdbdbd;"></span>
+                </div></button>
+                <!-- timeline diagram code -->
+                <div class="timeline-diagram" id="reveal" style="display: none;">
+                    <div class="flex-parent">
+                        <div class="input-flex-container">
+                            <div class="input">
+                                <span data-year="Mar" ></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="April" ></span>
+                            </div>
+                            <div class="input active">
+                                <span data-year="May"></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="June"></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="July"></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="Aug"></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="Sept" ></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="Oct" ></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="Nov"></span>
+                            </div>
+                            <div class="input">
+                                <span data-year="Dec"></span>
+                            </div>
+                        </div>
+                        <div class="description-flex-container">
+                            <p>Timeline starts</p>
+                            <p>objective to research on producdt</p>
+                            <p class="active">one on one meeting</p>
+                            <p>Design Process starts</p>
+                            <p>actual development starts</p>
+                            <p>Because paper currency.</p>
+                            <p>Nobody likes</p>
+                            <p>Brighter than glow memory.</p>
+                            <p>To capitalize on an as-yet </p>
+                            <p>Timeline ends</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="objectives">
+                <p>Objectives</p>
+                <button onclick="keyReveal()">
+                    <div class="objective" id="objective">
+                        <span class="iconify" data-inline="false" data-icon="bi:plus-circle" style="font-size: 24px; color:#bdbdbd;"></span>
+                        <h3 class="objective-name">Implement OKR Feature</h3>
+                        <p class="date">Dec 31</p>
+                        <div class="editor">    
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="status">
+                            <div class="details">
+                            <p>25%</p>
+                            <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="update-time">updated 2hrs ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                        
+                    </div>
+                </button>
+
+                <div class="complete-reveal" id="complete-reveal" style="display: none;"> 
+                    <div class="key">
+                        <h4 class="key-name">Implement OKR Feature</h4>
+                        <p class="keydate">Dec 31</p>
+                        <div class="author">
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="key-status">
+                            <div class="current">
+                                <p>25%</p>
+                                <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="key-time">updated 2min ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                    </div>
+
+                    <div class="key">
+                        <h4 class="key-name">Implement OKR Feature</h4>
+                        <p class="keydate">Dec 31</p>
+                        <div class="author">
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="key-status">
+                            <div class="current">
+                                <p>25%</p>
+                                <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="key-time">updated 2min ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                    </div>
+
+                    <div class="key">
+                        <h4 class="key-name">Implement OKR Feature</h4>
+                        <p class="keydate">Dec 31</p>
+                        <div class="author">
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="key-status">
+                            <div class="current">
+                                <p>25%</p>
+                                <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="key-time">updated 2min ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                    </div>
+
+                    <div class="addmorekeys">
+                        <span class="iconify" data-inline="false" data-icon="bi:plus-circle" style="font-size: 24px; color:#051e3c;"></span>
+                        <p>Add Keys</p>
+                    </div>
+                    
+                </div>
+
+                <!-- second -->
+                <button onclick="keyReveal()">
+                    <div class="objective">
+                        <span class="iconify" data-inline="false" data-icon="bi:plus-circle" style="font-size: 24px; color:#bdbdbd;"></span>
+                        <h3 class="objective-name">Implement OKR Feature</h3>
+                        <p class="date">Dec 31</p>
+                        <div class="editor">    
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="status">
+                            <div class="details">
+                            <p>25%</p>
+                            <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="update-time">updated 2hrs ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                        
+                    </div>
+                </button>
+
+                <!-- third -->
+                <button onclick="keyReveal()">
+                    <div class="objective">
+                        <span class="iconify" data-inline="false" data-icon="bi:plus-circle" style="font-size: 24px; color:#bdbdbd;"></span>
+                        <h3 class="objective-name">Implement OKR Feature</h3>
+                        <p class="date">Dec 31</p>
+                        <div class="editor">    
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="status">
+                            <div class="details">
+                            <p>25%</p>
+                            <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="update-time">updated 2hrs ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                        
+                    </div>
+                </button>
+                <!-- fourth -->
+                <button onclick="keyReveal()">
+                    <div class="objective" >
+                        <span class="iconify" data-inline="false" data-icon="bi:plus-circle" style="font-size: 24px; color:#bdbdbd;"></span>
+                        <h3 class="objective-name">Implement OKR Feature</h3>
+                        <p class="date">Dec 31</p>
+                        <div class="editor">    
+                            <img src="./assets/objectiveimg.png" alt="">
+                            <p>John Doe</p>
+                        </div>
+                        <div class="status">
+                            <div class="details">
+                            <p>25%</p>
+                            <p>On Track</p>
+                            </div>
+                            <progress id="file" value="25" max="100"> 25 </progress>
+                            <p class="update-time">updated 2hrs ago</p>
+                        </div>
+                        <span class="iconify" data-inline="false" data-icon="system-uicons:graph-box" style="font-size: 24px; color: #051e3c;"></span>
+                        <span class="iconify" data-inline="false" data-icon="bi:three-dots-vertical" style="font-size: 24px; color: #bdbdbd;"></span>
+                        
+                    </div>
+                </button>
+                
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="index.js"></script>
+    <script src="timeline.js"></script>
+</body>
+</html>
